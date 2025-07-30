@@ -19,7 +19,7 @@ function CreateListing() {
     formData.append("image", image);
 
     try {
-      const res = await axios.post("http://localhost:5000/api/listings/", formData, { withCredentials: true });
+      const res = await axios.post("https://airbnb-znta.onrender.com/api/listings/", formData, { withCredentials: true });
       navigate("/");
     } catch (error) {
       console.error("Error creating listing:", error);
