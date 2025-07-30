@@ -1,0 +1,28 @@
+@"
+# Node
+node_modules/
+.env
+.env.local
+dist/
+build/
+.cache/
+.vscode/
+.DS_Store
+*.log
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS files
+Thumbs.db
+desktop.ini
+
+# React & Vite builds
+frontend/dist/
+backend/dist/
+
+# Render/Vercel config
+.vercel/
+"@ | Out-File -FilePath .gitignore -Encoding utf8
