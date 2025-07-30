@@ -29,7 +29,21 @@ app.use(fileUpload({
 
 
 // Middleware
-app.use(cors({ origin: "https://airbnb-byj4-hgo9co486-rahul74747474s-projects.vercel.app", credentials: true }));
+const allowedOrigins = [
+  "https://airbnb-byj4.vercel.app", // ✅ production
+  "https://airbnb-byj4-hgo9co486-rahul74747474s-projects.vercel.app", // ✅ preview deployment
+];
+
+app.use(cors({
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  credentials: true,
+}));
 app.use(express.json());
 app.use(cookieParser());
 
