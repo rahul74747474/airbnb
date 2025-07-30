@@ -23,6 +23,7 @@ function CreateListing() {
       navigate("/");
     } catch (error) {
       console.error("Error creating listing:", error);
+      navigate("/login");
     }
   };
 
